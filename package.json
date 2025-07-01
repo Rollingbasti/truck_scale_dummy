@@ -1,0 +1,19 @@
+{
+  "name": "truck_scale_dummy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchAll",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "express": "^5.1.0",
+    "jest": "^30.0.3",
+    "supertest": "^7.1.1"
+  }
+}
