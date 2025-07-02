@@ -4,8 +4,12 @@ const port = 3000;
 
 // Funktion zur Simulation eines Gewichts
 function getWeight() {
-    return (Math.random() * 10000).toFixed(2); // Zufälliges Gewicht zwischen 0 und 100 kg
+    return (Math.random() * 10000).toFixed(2);
 }
+
+app.get('/', (req, res) => {
+    res.send('<h1>Hello World</h1>');
+});
 
 // GET-Endpunkt, der das Gewicht zurückgibt
 app.get('/weight', (req, res) => {
