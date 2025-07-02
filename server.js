@@ -1,10 +1,12 @@
 const express = require('express');
+const serverless = require('serverless-http');
 const app = express();
 const port = 3000;
 
+const router = express.Router();
 // Funktion zur Simulation eines Gewichts
 function getWeight() {
-    return (Math.random() * 10000).toFixed(2);
+    return (Math.random() * 100000).toFixed(2);
 }
 
 app.get('/', (req, res) => {
@@ -17,8 +19,8 @@ app.get('/weight', (req, res) => {
     res.json({ weight: `${weight}` });
 });
 
-app.listen(port, () => {
-    console.log(`Waage-Service läuft auf http://localhost:${port}`);
-});
+app.use('/', router);
+
 
 module.exports = app;
+module.exports.handler = serverless(app);
